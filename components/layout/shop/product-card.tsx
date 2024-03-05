@@ -1,4 +1,5 @@
 "use client";
+
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
 import {
   Card,
@@ -8,9 +9,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+
 import Image from "next/image";
+
 import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
 
 interface ProductCardProps {
   id: string;
@@ -52,20 +55,18 @@ export default function ProductCard({
       currency,
       image,
     });
+
     toast({
-      title: `${name} adicionado ao carrinho`,
-      description:"Adicione mais por descontos.",
-      duration: 3000,
-     
+      title: `🎉 ${name} Adicionado`,
+      description: "Adicione mais por descontos.",
     });
-    
   }
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center justify-center min-h-[4rem]">
-          {name}
+          {name}e
         </CardTitle>
         <CardDescription className="relative w-full h-60">
           <Image
